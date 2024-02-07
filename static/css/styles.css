@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,600;0,700;1,300;1,500&display=swap');
+
+:root{
+  --dark-bg: #2A2934;
+  --brand-blue: #2E599A;
+  --medium-blue: #3E3D4B;
+  --off-white: #D7D7D7;
+
+  --soft-shadow: 12px 12px 75px 0px rgba(0,0,0,0.25);
+}
+
+
+html {
+  background-color: var(--dark-bg);
+}
+
+body {
+  margin: 0;
+  font-family: Jost;
+}
+
+nav {
+  background-color: var(--medium-blue);
+  color: var(--off-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  left: 0px;
+  height: 100%;
+  z-index: 1;
+  width: 350px;
+  padding-top: 130px;
+  box-shadow: var(--soft-shadow);
+}
+nav li {
+  list-style-type: none;
+  font-size: 2em;
+  font-weight: 600;
+  margin-left: 1em;
+}
+
+nav li.featured {
+  margin-top: 1.5em;
+}
+
+nav div#rooms {
+  width: 100%;  
+  background-color: var(--brand-blue) !important;
+  height: 2em;
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 2em;
+  display: flex;
+}
+
+ul.rooms-list li {
+  font-size: 1.5em;
+}
+
+#rooms span {
+  margin-left: 1.5em;
+  align-self: center;
+}
+
+
+div#app-title {
+  padding: 0em 2em;
+  background-color: var(--brand-blue);
+  box-shadow: var(--soft-shadow);
+  position: fixed;
+  left: 350px;
+  top: 0px;
+  z-index:2;
+  width: 100%;
+  height: 7em;
+  display: flex;
+}
+
+h1 {
+  line-height: 100%;
+  color: var(--off-white);
+  font-family: Jost;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top:auto; 
+  font-size: 3em;
+  align-self: flex-end;
+}
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href='/static/css/styles.css'>
+</head>
+<body>
+
+
+  <div id="app-title">
+    <h1>AtmosPür</h1>
+  </div>
+
+
+  <nav>
+    <ul>
+      <li>Current Stats</li>
+      <li>Forecast</li>
+      <li>Health</li>
+      <li class="featured">PürProgress</li>
+    </ul>
+
+    <div id="rooms">
+      <span>Rooms</span>
+    </div>
+
+    <ul class="rooms-list">
+      <li>Office</li>
+      <li>Living Room</li>
+      <li>Kitchen</li>
+      <li>Master Bed</li>
+      <li>Kids' Room</li>
+      <li>Basement</li>
+    </ul>
+
+  </nav>
+
+
+
+
+
+  {% block content %}  
+  {% endblock %}
+  
+
+
+</body>
+</html>
