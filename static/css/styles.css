@@ -2,8 +2,8 @@
 
 :root{
   --dark-bg: #2A2934;
-  --brand-blue: #2E599A;
   --medium-blue: #3E3D4B;
+  --brand-blue: #2E599A;
   --off-white: #D7D7D7;
 
   --q1-good: #05F300;
@@ -18,12 +18,14 @@
 }
 
 body {
+  font-family: "Jost";
   background-color: var(--dark-bg);
   margin: 0;
-  height: 100%;
-  width: 100%;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 25% 75%;
   grid-template-rows: 15% 85%;
 }
 
@@ -42,10 +44,10 @@ div#app-title {
 }
 
 div#navigation {
-  
+  height: 100vh;
   background-color: var(--medium-blue);
   color: var(--off-white);
-  padding-top: 130px;
+  
   box-shadow: var(--soft-shadow);  
 }
 nav li {
@@ -60,13 +62,18 @@ nav li.featured {
 }
 
 nav div#rooms {
-  width: 100%;  
   background-color: var(--brand-blue) !important;
   height: 2em;
   font-size: 2em;
   font-weight: 600;
   margin-top: 2em;
   display: flex;
+}
+
+
+ul#nav-links {
+  padding-top: 130px;
+  margin-top: 0;  
 }
 
 ul.rooms-list li {
@@ -79,12 +86,10 @@ ul.rooms-list li {
 }
 
 
-
 div#app-title {
   padding: 0em 2em;
   background-color: var(--brand-blue);
   box-shadow: var(--soft-shadow);
-  width: 100%;
   display: flex;
 }
 
@@ -99,3 +104,61 @@ h1 {
   align-self: flex-end;
 }
 
+
+div.main {
+  bottom: 0px; 
+  display: flex; 
+  justify-content: center;
+}
+
+div#circles-container {
+  display: grid;
+  /* grid-template-columns: ; */
+  grid-template-rows: 100%;
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  top:15%;
+}
+
+div.circle {
+  border: 20px solid;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.circle.inside {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  z-index: 2; 
+  border-color: var(--q1-good);
+  height: 200px;
+  width: 200px;
+  color: var(--q1-good);
+  background-color: var(--dark-bg);
+}
+
+div.circle.outside {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-color: var(--q3-low-unhealthy);
+  height: 160px;
+  width: 160px;
+  color: var(--q3-low-unhealthy);
+  position: relative;
+  top: 55px;
+  right: 30px;
+}
+
+.circle p {
+  margin: 0;
+}
+
+div.circle p.aqi-number {
+  font-size: 4em;
+  font-weight: 800;
+  line-height: 1em; 
+}
