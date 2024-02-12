@@ -54,7 +54,7 @@ nav li {
   list-style-type: none;
   font-size: 2em;
   font-weight: 600;
-  margin-left: 1em;
+  margin-left: 0;
 }
 
 nav li.featured {
@@ -66,7 +66,7 @@ nav div#rooms {
   height: 2em;
   font-size: 2em;
   font-weight: 600;
-  margin-top: 2em;
+  margin-top: 1em;
   display: flex;
 }
 
@@ -75,6 +75,33 @@ ul#nav-links {
   padding-top: 130px;
   margin-top: 0;  
 }
+
+
+div#set-location {
+  padding-left: 40px;
+}
+input#location-input {
+  font-family: 'Jost';
+  font-size: 1em;
+  padding: .5em;
+  border: none;
+  border-radius: 5px; 
+  background-color: var(--off-white);
+}
+input#location-submit {
+  font-family: 'Jost';
+  font-size: 1em;
+  padding: .5em;
+  width: 3em;
+  background-color: var(--brand-blue);
+  color: var(--off-white);
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px; 
+}
+
+
+
 
 ul.rooms-list li {
   font-size: 1.5em;
@@ -104,24 +131,35 @@ h1 {
   align-self: flex-end;
 }
 
+h2 {
+  margin: 0;
+}
+
 
 div.main {
   bottom: 0px; 
-  display: flex; 
-  justify-content: center;
+  /* display: grid; 
+  flex-direction: column;
+  justify-content: center; */
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 60% 40%;
 }
 
 div#circles-container {
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
-  /* grid-template-columns: ; */
   grid-template-rows: 100%;
   width: fit-content;
   height: fit-content;
   position: relative;
-  top:15%;
+  top:10%;
 }
 
 div.circle {
+  box-shadow: var(--soft-shadow);
   border: 20px solid;
   border-radius: 100%;
   display: flex;
@@ -134,26 +172,27 @@ div.circle.inside {
   grid-column-start: 1;
   grid-column-end: 2;
   z-index: 2; 
-  border-color: var(--q1-good);
+  border-color: var(--q2-moderate);
   height: 200px;
   width: 200px;
-  color: var(--q1-good);
+  color: var(--q2-moderate);
   background-color: var(--dark-bg);
 }
 
 div.circle.outside {
   grid-column-start: 2;
   grid-column-end: 3;
-  border-color: var(--q3-low-unhealthy);
-  height: 160px;
-  width: 160px;
-  color: var(--q3-low-unhealthy);
+  border-color: var(--q5-very-unhealthy);
+  color: var(--q5-very-unhealthy);
+  background-color: var(--off-white);
+  height: 170px;
+  width: 170px;
   position: relative;
-  top: 55px;
+  top: 45px;
   right: 30px;
 }
 
-.circle p {
+div.circle p {
   margin: 0;
 }
 
@@ -161,4 +200,35 @@ div.circle p.aqi-number {
   font-size: 4em;
   font-weight: 800;
   line-height: 1em; 
+}
+
+
+div#aqi-info-card-container {
+  color: var(--off-white);
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 2em;
+}
+
+div.aqi-info-card.first{
+  grid-column: 1 2;
+}
+div.aqi-info-card.second{
+  grid-column: 2 3;
+}
+
+div.aqi-info-card {
+  background-color: var(--medium-blue);
+  box-shadow: var(--soft-shadow);
+  border-radius: 15px 15px 0px 0px;
+}
+div.aqi-info-card div.info-text {
+  margin: 2em;
+}
+
+.info-text-intro p{
+  margin:0;
 }
