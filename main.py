@@ -10,6 +10,8 @@ socketio = SocketIO(app)
 # location_service = subprocess.run(['python3', './static/microservices/locationService.py'], shell=True, capture_output=True, text=True)
 
 inside_aqi = 0
+outside_aqi = 0
+
 
 def check_settings(key):
   userSettings = open("./static/microservices/user-settings.json", "r")
@@ -21,10 +23,13 @@ def check_settings(key):
 def index():
   if request.method == "GET":
     location_search = check_settings("home-location")
+    location_name = check_settings("location-name")
     title = "AtmosPür"
     return render_template('index.html',
                           title = title,
                           inside_aqi = inside_aqi,
+                          outside_aqi = outside_aqi,
+                          location_name = location_name,
                           location_search = location_search)
 
 
@@ -49,11 +54,20 @@ def location_search():
 
 
 @app.route("/api/inside", methods=["POST"])
-def post_listener():
+def post_listener_inside():
   data = request.get_json()
   global inside_aqi
   inside_aqi = data['inside-aqi']
   return "AQI Updated", 201
+
+
+@app.route("/api/outside", methods=["POST"])
+def post_listener_outside():
+  data = request.get_json()
+  global outside_aqi
+  outside_aqi = data['outside-aqi']
+  return "AQI Updated", 201
+
 
 
 
