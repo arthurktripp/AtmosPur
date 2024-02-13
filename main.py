@@ -1,12 +1,15 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 from flask_socketio import SocketIO
-import json
+import json, time
 
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "password!"
 socketio = SocketIO(app)
 
+# location_service = subprocess.run(['python3', './static/microservices/locationService.py'], shell=True, capture_output=True, text=True)
+
+inside_aqi = 0
 
 def check_settings(key):
   userSettings = open("./static/microservices/user-settings.json", "r")
@@ -21,6 +24,7 @@ def index():
     title = "AtmosPür"
     return render_template('index.html',
                           title = title,
+                          inside_aqi = inside_aqi,
                           location_search = location_search)
 
 
@@ -39,7 +43,18 @@ def location_search():
       json.dump(userSettingsData, userSettings)
 
     print('New Location is: ', location_search)
+    time.sleep(1)
     return redirect('/')
+
+
+
+@app.route("/api/inside", methods=["POST"])
+def post_listener():
+  data = request.get_json()
+  global inside_aqi
+  inside_aqi = data['inside-aqi']
+  return "AQI Updated", 201
+
 
 
 
