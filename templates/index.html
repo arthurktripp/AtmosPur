@@ -5,14 +5,14 @@
 <div class="main">
 
   <div id="circles-container">
-    <div class="circle inside">
-      <p class="aqi-number">{{inside_aqi}}</p>
-      <p class="aqi-room">LIVING ROOM</p>
+    <div id="inside-circle" class="circle inside">
+      <p id="inside-aqi-number" class="aqi-number">{{inside_aqi}}</p>
+      <p id="inside-aqi-location" class="aqi-room">LIVING ROOM</p>
     </div>
 
-    <div class="circle outside">
-      <p class="aqi-number">{{outside_aqi}}</p>
-      <p class="aqi-room">{{location_name | upper}}</p>
+    <div id="outside-circle" class="circle outside">
+      <p id="outside-aqi-number" class="aqi-number">{{outside_aqi}}</p>
+      <p id="outside-aqi-location" class="aqi-room">{{location_name | upper}}</p>
     </div>
   </div>
 
@@ -40,10 +40,6 @@
     </div>
   
   </div>
-
-
-
-
 </div>
 
 

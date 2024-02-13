@@ -184,7 +184,7 @@ div.circle.outside {
   grid-column-end: 3;
   border-color: var(--q5-very-unhealthy);
   color: var(--q5-very-unhealthy);
-  background-color: var(--off-white);
+  background-color: var(--dark-bg);
   height: 170px;
   width: 170px;
   position: relative;
