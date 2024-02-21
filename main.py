@@ -69,6 +69,14 @@ def post_listener_outside():
   return "AQI Updated", 201
 
 
+@app.route("/api/data_tracking", methods=["GET"])
+def send_data():
+  time_raw = time.localtime()
+  time_logged = time.asctime(time_raw)
+  data = {"aqi_time": time_logged, "inside-aqi": inside_aqi, "outside-aqi": outside_aqi}
+  
+  return json.dumps(data)
+
 
 
 
@@ -76,3 +84,5 @@ def post_listener_outside():
 if __name__ == "__main__":
   app.run(port=5001, debug = True)
   socketio.run(app)
+
+
