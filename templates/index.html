@@ -4,6 +4,17 @@
 
 <div class="main">
 
+  <div class="page-title">
+    <h2>Current Stats</h2>
+    <div class="help-hover">?
+    <span class="tooltip title-help">
+      View the current AQI in your selected room, and compare it to the air quality outside.<br>
+      The outside air quality is selected by choosing your location on the left.<br>
+      This index is a public service provided by your municipality and EPA.</span>
+      </div>
+  </div>
+  
+
   <div id="circles-container">
     <div id="inside-circle" class="circle inside">
       <p id="inside-aqi-number" class="aqi-number">{{inside_aqi}}</p>
@@ -15,6 +26,8 @@
       <p id="outside-aqi-location" class="aqi-room">{{location_name | upper}}</p>
     </div>
   </div>
+
+
 
 
   <div id="aqi-info-card-container">
