@@ -25,11 +25,14 @@
       </ul>
 
       <div id="set-location">
-        <form action="{{ url_for('location_search') }}" method="post">
-          <label for="location-input">Set location:</label><br>
-          <input placeholder="{{location_search}}" value="{{location_search}}" name="locationInput" id="location-input">
-          <input type="submit" id="location-submit" value="Set" onclick="return locationWarn()"> 
-        </form>
+        <button id="update-location-button" onclick="showLocUpdate()"><label for="location-input">Set location</label></button><br>
+        <div>
+          <form id="location-update" action="{{ url_for('location_search') }}" method="post">
+              <input type="text" placeholder="{{location_search}}" value="{{location_search}}" name="locationInput" id="location-input">
+              <input type="submit" id="location-submit" value="Set" onclick="return locationWarn()">
+              <button id="cancel-location-update" onclick="hideLocUpdate()">Cancel</button> 
+          </form>
+        </div>
       </div>
 
       <div id="rooms">

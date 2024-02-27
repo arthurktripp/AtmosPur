@@ -87,6 +87,7 @@ input#location-input {
   border: none;
   border-radius: 5px; 
   background-color: var(--off-white);
+  margin-top: 10px;
 }
 input#location-submit {
   font-family: 'Jost';
@@ -101,7 +102,24 @@ input#location-submit {
   cursor: pointer;
 }
 
+#location-update {
+  visibility: hidden;
+}
 
+
+button {
+  font-family: 'Jost';
+  font-size: 1em;
+  padding: .5em;
+  background-color: var(--brand-blue);
+  color: var(--off-white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button label {
+  cursor: pointer;
+}
 
 
 ul.rooms-list li {
