@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 from flask_socketio import SocketIO
 import json, time
-
+import healthinfo
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "password!"
@@ -22,15 +22,27 @@ def check_settings(key):
 @app.route("/", methods=["GET", "POST"])
 def index():
   if request.method == "GET":
+    insideData = healthinfo.getHealthData(inside_aqi)
+    outsideData = healthinfo.getHealthData(outside_aqi)
     location_search = check_settings("home-location")
     location_name = check_settings("location-name")
     title = "AtmosPür"
+        
     return render_template('index.html',
                           title = title,
                           inside_aqi = inside_aqi,
                           outside_aqi = outside_aqi,
                           location_name = location_name,
-                          location_search = location_search)
+                          location_search = location_search,
+                          insideTitle = insideData["title"],
+                          insideRange = insideData["range string"],
+                          insideTagline = insideData["tagline"],
+                          insideBody = insideData["body"],
+                          outsideTitle = outsideData["title"],
+                          outsideRange = outsideData["range string"],
+                          outsideTagline = outsideData["tagline"],
+                          outsideBody = outsideData["body"]                          
+                          )
 
 
 @app.route("/location_search", methods=["POST"])
@@ -53,6 +65,12 @@ def location_search():
 
 
 
+
+
+
+
+
+# API ENDPOINTS:
 @app.route("/api/inside", methods=["POST"])
 def post_listener_inside():
   data = request.get_json()

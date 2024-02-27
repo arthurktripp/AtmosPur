@@ -1,6 +1,7 @@
+let insideVal = parseInt(document.getElementById("inside-aqi-number").innerText);
+let insideCircle = document.getElementById("inside-circle");
+
 function insideColor() {
-  let insideVal = parseInt(document.getElementById("inside-aqi-number").innerText);
-  let insideCircle = document.getElementById("inside-circle");
   let insideCircleText = document.getElementById("inside-aqi-number");
   let insideCircleLocation = document.getElementById("inside-aqi-location");
   

@@ -1,0 +1,38 @@
+{
+  "good": {
+    "title": "Good",
+    "range string": "0 - 50",
+    "tagline": "Healthy For All People",
+    "body": "Air quality is satisfactory, and air pollution poses little or no risk."
+  },
+  "moderate": {
+    "title": "Moderate",
+    "range string": "51 - 100",
+    "tagline": "Generally Acceptable",
+    "body": "Moderate health concerns for a small number of people who are unusually sensitive to pollutants."
+  },
+  "unhealthy-sensitive": {
+    "title": "Unhealthy for Sensitive Groups",
+    "range string": "101 - 150",
+    "tagline": "Limit Exertion",
+    "body": "Members of sensitive groups may experience health effects. The general public is less likely to be affected."
+  },
+  "unhealthy": {
+    "title": "Unhealthy for Sensitive Groups",
+    "range string": "151 - 200",
+    "tagline": "Broad Health Affects",
+    "body": "Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects."
+  },
+  "very-unhealthy": {
+    "title": "Very Unhealthy",
+    "range string": "201 - 300",
+    "tagline": "HEALTH ALERT",
+    "body": "The risk of health effects is increased for everyone."
+  },
+  "hazardous": {
+    "title": "Hazardous",
+    "range string": "301+",
+    "tagline": "WARNING",
+    "body": "Health warning of emergency conditions: everyone is more likely to be affected."
+  }
+}
