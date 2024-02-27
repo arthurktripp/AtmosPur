@@ -97,7 +97,8 @@ input#location-submit {
   color: var(--off-white);
   border: none;
   margin-left: 10px;
-  border-radius: 5px; 
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 
@@ -144,7 +145,46 @@ div.main {
   height: 100%;
   display: grid;
   grid-template-columns: 1;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 10% 50% 40%;
+}
+
+div.page-title {
+  text-align: right;
+  font-size: 28px;
+  margin: 2em;
+  color: var(--off-white)
+}
+
+div.help-hover {
+  display: inline-block;
+  background-color: var(--brand-blue);
+  border-radius: 100%;
+  font-weight: bold;
+  height: 2em;
+  width: 2em;
+  text-align: center;
+  line-height: 2;
+  cursor: help;
+}
+
+span.tooltip {
+  font-weight: normal;
+  line-height: 1.5em;
+  font-size: 20px;
+  visibility: hidden;
+  width: 320px;
+  background-color: #2E599A;
+  text-align: left;
+  padding: 1em;
+  border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+  right: 8%;
+}
+
+div.help-hover:hover span.tooltip {
+  visibility: visible;
+
 }
 
 div#circles-container {
