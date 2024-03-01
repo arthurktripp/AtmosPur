@@ -45,6 +45,22 @@ def index():
                           )
 
 
+@app.route("/PurProgress", methods=["GET"])
+def purprogress():
+  if request.method == "GET":
+    title = "PürProgress"
+    location_search = check_settings("home-location")
+    location_name = check_settings("location-name")
+    
+    return render_template('pur-progress.html',
+                           title = title,
+                           location_name = location_name,
+                           location_search = location_search)
+
+
+
+
+
 @app.route("/location_search", methods=["POST"])
 def location_search():
   if request.method == "POST":

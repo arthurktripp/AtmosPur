@@ -3,7 +3,7 @@ import serial, time, requests, math
 
 # check USB port with "python3 -m serial.tools.list_ports"
 
-ser = serial.Serial('/dev/cu.usbmodem144401', 9600, timeout=5)
+ser = serial.Serial('/dev/cu.usbmodem143401', 9600, timeout=5)
 url = "http://127.0.0.1:5001/api/inside"
 
 

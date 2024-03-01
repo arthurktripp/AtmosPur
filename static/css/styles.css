@@ -61,6 +61,11 @@ nav li.featured {
   margin-top: 1.5em;
 }
 
+nav a {
+  color: var(--off-white);
+  text-decoration: none;
+}
+
 nav div#rooms {
   background-color: var(--brand-blue) !important;
   height: 2em;
