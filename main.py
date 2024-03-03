@@ -30,6 +30,7 @@ def index():
         
     return render_template('index.html',
                           title = title,
+                          page_title = "Current Stats",
                           inside_aqi = inside_aqi,
                           outside_aqi = outside_aqi,
                           location_name = location_name,
@@ -51,7 +52,8 @@ def purprogress():
     title = "PürProgress"
     location_search = check_settings("home-location")
     location_name = check_settings("location-name")
-    graph = makegraph.graph_averages()
+    graph_type = request.args.get('graph-type')
+    graph = makegraph.graph_aqi(graph_type)
     
     return render_template('pur-progress.html',
                            title = title,
