@@ -29,6 +29,7 @@ def index():
     title = "AtmosPür"
         
     return render_template('index.html',
+                          current_active = True,
                           title = title,
                           page_title = "Current Stats",
                           inside_aqi = inside_aqi,
@@ -56,6 +57,7 @@ def purprogress():
     graph = makegraph.graph_aqi(graph_type)
     
     return render_template('pur-progress.html',
+                           purprogress_active = True,
                            title = title,
                            page_title = "PürProgress",
                            location_name = location_name,

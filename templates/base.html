@@ -18,10 +18,10 @@
   <nav>
     <div id="navigation">
       <ul id="nav-links">
-        <li><a href="/">Current Stats</a></li>
-        <li>Forecast</li>
-        <li>Health</li>
-        <li class="featured"><a href="/PurProgress">PürProgress</a></li>
+        <li {% if current_active %} class="active-page" {% endif %}><a href="/">Current Stats</a></li>
+        <li {% if forecast_active %} class="active-page" {% endif %}>Forecast</li>
+        <li {% if health_active %} class="active-page" {% endif %}>Health</li>
+        <li class="featured {% if purprogress_active %} active-page" {% endif %}"><a href="/PurProgress">PürProgress</a></li>
       </ul>
 
       <div id="set-location">
@@ -44,7 +44,6 @@
         <li>Kitchen</li>
         <li>Master Bed</li>
         <li>Kids' Room</li>
-        <li>Basement</li>
       </ul>
     </div>
   </nav>
