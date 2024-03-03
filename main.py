@@ -1,7 +1,8 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 from flask_socketio import SocketIO
 import json, time
-import healthinfo, makegraph
+import static.microservices.healthinfo as healthinfo
+import static.microservices.makegraph as makegraph
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "password!"
