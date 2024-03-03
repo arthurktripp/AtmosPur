@@ -23,7 +23,6 @@ def graph_aqi(graph_type="average"):
       aqi_outdoor.append(each["Outdoor AQI"])
 
     p = figure(title="Today's Details", 
-              height = 500,
               x_axis_label= "Time", 
               y_axis_label="AQI", 
               x_axis_type="datetime", 
@@ -50,7 +49,6 @@ def graph_aqi(graph_type="average"):
       aqi_outdoor.append(each[1][0]["Outdoor AQI"])
     
     p = figure(title="Daily Averages", 
-              height = 500,
               x_axis_label= "Date", 
               y_axis_label="AQI", 
               x_axis_type="datetime", 
