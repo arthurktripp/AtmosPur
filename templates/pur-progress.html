@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="main-graph">
 
-<div class="main">
+<script src="{{ graph.cdn_js | safe }}"></script>
+{{ graph.script | safe }}
+ <link rel="stylesheet" href='../static/css/graph-styles.css'>
 
   <div class="page-title">
-    <h2>PürProgress</h2>
+    <h2>{{page_title}}</h2>
     <div class="help-hover">?
     <span class="tooltip title-help">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at nunc suscipit, tempor elit non, commodo orci. Aenean mollis elementum tempor. Etiam a massa vitae lorem auctor vestibulum. Proin hendrerit dapibus sapien, eu ornare metus tempor non. Aliquam pulvinar congue leo, ut posuere ipsum faucibus eu. Vivamus ac eleifend arcu, ut rutrum neque. Donec ipsum augue, finibus eget eleifend vitae, facilisis ut ante. Nulla sed turpis nisl.</span>
@@ -13,8 +16,14 @@
   </div>
   
 
-  <div id="graph">
-      
+  <div class="graph">
+    {{ graph.div | safe }}
+    <div id="graph-range-select">
+      <div>
+        <button class="graph-type">Daily Averages</button>
+        <button class="graph-type">Today's Details</button>
+      </div>
+    </div>
   </div>
  
 

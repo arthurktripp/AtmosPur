@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for
 from flask_socketio import SocketIO
 import json, time
-import healthinfo
+import healthinfo, makegraph
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "password!"
@@ -51,11 +51,14 @@ def purprogress():
     title = "PürProgress"
     location_search = check_settings("home-location")
     location_name = check_settings("location-name")
+    graph = makegraph.graph_averages()
     
     return render_template('pur-progress.html',
                            title = title,
+                           page_title = "PürProgress",
                            location_name = location_name,
-                           location_search = location_search)
+                           location_search = location_search,
+                           graph = graph)
 
 
 
@@ -117,6 +120,6 @@ def send_data():
 
 if __name__ == "__main__":
   app.run(port=5001, debug = True)
-  socketio.run(app)
+  # socketio.run(app)
 
 

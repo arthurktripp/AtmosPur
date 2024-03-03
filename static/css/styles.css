@@ -34,7 +34,7 @@ nav {
   grid-column-start: 1;
   grid-row-start: 1;
 }
-div.main {
+div.main, div.main-graph {
   grid-column-start: 2;
   grid-row-start: 2;
 }
@@ -294,4 +294,34 @@ div.aqi-info-card div.info-text {
 
 .info-text-intro p{
   margin:0;
+}
+
+
+div.main-graph {
+  bottom: 0px; 
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 10% 90%;
+}
+
+
+div.graph {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  margin: 3em 4em 0em 3em;
+}
+#graph-range-select {
+  max-height: 75%;
+}
+#graph-range-select div {
+  margin-top: 5em;
+}
+
+button.graph-type {
+  margin-top: 1em;
+}
+
+div.bk-Figure {
+  max-height: 85%;
 }
