@@ -108,3 +108,4 @@ def graph_aqi(graph_type="average"):
   
 if __name__ == "__main__":
   graph_aqi("today")
+  
