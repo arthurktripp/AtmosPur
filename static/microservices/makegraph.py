@@ -1,27 +1,27 @@
-from bokeh.plotting import figure, show
-from bokeh.resources import CDN, INLINE
-from bokeh.embed import file_html, components
-from bokeh.core.enums import SizingMode
-from bokeh.layouts import column, row
-from bokeh.models import RangeTool, ColumnDataSource
+from bokeh.plotting import figure
+from bokeh.resources import CDN
+from bokeh.embed import components
 from datetime import datetime
 import requests, json
 
 
 def graph_aqi(graph_type="average"):
+  # get the logged AQI data from microservice
   response = requests.get('http://aqi.arthurktripp.com:5002/api')
   tracked_aqi = json.loads(response.text)
   date = []
   aqi_indoor = []
   aqi_outdoor = []
   
-   
+  
+  # Build graph based on minute-by-minute tracking
   if graph_type == "today":
     for each in tracked_aqi[-1][1]:
       date.append(datetime.strptime(each["Time"], "%I:%M %p"))
       aqi_indoor.append(each["Indoor AQI"])  
       aqi_outdoor.append(each["Outdoor AQI"])
 
+    # graph object
     p = figure(title="Today's Details", 
               x_axis_label= "Time", 
               y_axis_label="AQI", 
@@ -42,7 +42,9 @@ def graph_aqi(graph_type="average"):
           color="#2E599AFF",
           line_join="bevel",
           line_cap="round")
+  
   else:
+    # by default, create graph using store daily averages:
     for each in tracked_aqi:
       date.append(datetime.strptime(each[0], "%Y-%m-%d"))
       aqi_indoor.append(each[1][0]["Indoor AQI"])  
@@ -69,7 +71,7 @@ def graph_aqi(graph_type="average"):
           line_join="bevel",
           line_cap="round")
 
-
+  # styles that apply to both graph formats
   p.title.text_color = "#D7D7D7FF"
   p.title.text_font = "Jost"
   p.title.text_font_size = "22px"
@@ -98,14 +100,15 @@ def graph_aqi(graph_type="average"):
   p.legend.background_fill_color = None
   p.legend.border_line_color = None
 
-  # show(p)
+
   script, div = components(p)
   cdn_js = CDN.js_files[0]
 
   graph = {"script": script, "div": div, "cdn_js": cdn_js}
   return graph
   
-  
+
+# use for testing and styling:
 if __name__ == "__main__":
   graph_aqi("today")
   
