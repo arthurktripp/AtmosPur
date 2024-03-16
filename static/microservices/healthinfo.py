@@ -1,5 +1,7 @@
 import json
 
+# return static information that cooresponds to current AQI
+# uses health descriptions from EPA stored in a local JSON file
 def getHealthData(aqi):
   with open("./static/health-info.json") as  data:
     healthdata = json.load(data)
