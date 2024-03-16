@@ -1,13 +1,7 @@
 import requests, json, time
 
 
-def check_coords():
-  with open('./static/microservices/user-settings.json', 'r') as userSettings:
-    userSettingsData = json.load(userSettings)
-    lat_long = [userSettingsData['home_lat'], userSettingsData['home_long']]
-  return lat_long
-
-
+# use local coordinates to get the current local AQI
 def get_aqi():
   lat_long = check_coords()
   latitude = lat_long[0]
@@ -22,6 +16,15 @@ def get_aqi():
   return aqiNum
 
 
+# check the coordinates stored in the user settings json file
+def check_coords():
+  with open('./static/microservices/user-settings.json', 'r') as userSettings:
+    userSettingsData = json.load(userSettings)
+    lat_long = [userSettingsData['home_lat'], userSettingsData['home_long']]
+  return lat_long
+
+
+# posts the outdoor AQI to the main application
 def send_local_aqi(data):
   time_raw = time.localtime()
   time_log = time.asctime(time_raw)
