@@ -1,7 +1,9 @@
-let insideVal = parseInt(document.getElementById("inside-aqi-number").innerText);
-let insideCircle = document.getElementById("inside-circle");
+// DOM manipulations for element colors based on
+// current indoor and outdoor AQIs.
 
 function insideColor() {
+  let insideVal = parseInt(document.getElementById("inside-aqi-number").innerText);
+  let insideCircle = document.getElementById("inside-circle");
   let insideCircleText = document.getElementById("inside-aqi-number");
   let insideCircleLocation = document.getElementById("inside-aqi-location");
   
