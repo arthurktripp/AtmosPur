@@ -1,8 +1,8 @@
 # AtmosPür Air Quality Monitoring
-This is a project for Oregon State University's course, CS361 Software Engineering I.
+This is a project for Oregon State University's course, CS361 Software Engineering I. 
 
 ## Description
-This product allows the user to view and track the air quality in their home, while comparing it to the air quality outside.
+This product allows the user to view and track the air quality in their home, while comparing it to the air quality outside. You can view a video demonstration at [https://youtu.be/UOW1RqW0Lbg](https://youtu.be/UOW1RqW0Lbg).
 
 From the home page, the user can easily view the current AQIs. The large font and dynamic colors communicate high level information at a glance. More information is also presented on this page, should a user need to read more.
 
